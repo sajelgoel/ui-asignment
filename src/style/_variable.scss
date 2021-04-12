@@ -1,0 +1,15 @@
+:root {
+  --error: red;
+  --blue-color: #1d69a1;
+  --white: white;
+  --black: black;
+}
+.dark-theme {
+  --primary-color: white;
+  --primary-bg-color: black;
+}
+
+.light-theme {
+  --primary-color: black;
+  --primary-bg-color: white;
+}

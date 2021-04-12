@@ -1,0 +1,47 @@
+<div class="row header">
+  <span
+    class="material-icons cursor-pointer"
+    (click)="changePage.emit()"
+    role="button"
+  >
+    arrow_back </span
+  ><span>{{ "SORT_BY" | translate }}</span>
+  <span></span>
+</div>
+<form [formGroup]="form" (ngSubmit)="submit()" class="">
+  <div class="div-margin">
+    <input type="radio" id="1" value="1" formControlName="sortBy" />
+    <label for="1">{{ "PRICE_LOW_TO_HIGH" | translate }}</label>
+  </div>
+  <div class="div-margin">
+    <input type="radio" id="2" value="2" formControlName="sortBy" />
+    <label for="2">{{ "PRICE_HIGH_TO_LOW" | translate }}</label>
+  </div>
+  <div class="div-margin">
+    <input type="radio" id="3" value="3" formControlName="sortBy" />
+    <label for="3">{{ "DURATION_SHORT_TO_LONG" | translate }}</label>
+  </div>
+  <div class="div-margin">
+    <input type="radio" id="4" value="4" formControlName="sortBy" />
+    <label for="4">{{ "DURATION_LONG_TO_SHORT" | translate }}</label>
+  </div>
+  <div class="div-margin">
+    <input type="radio" id="5" value="5" formControlName="sortBy" />
+    <label for="5">{{ "DEPARTURE" | translate }}</label>
+  </div>
+  <div class="div-margin">
+    <input type="radio" id="6" value="6" formControlName="sortBy" />
+    <label for="6">{{ "ARRIVAL" | translate }}</label>
+  </div>
+  <div class="div-margin">
+    <input type="radio" id="7" value="7" formControlName="sortBy" />
+    <label for="7">{{ "A_Z" | translate }}</label>
+  </div>
+  <div class="div-margin">
+    <input type="radio" id="8" value="8" formControlName="sortBy" />
+    <label for="8">{{ "Z_A" | translate }}</label>
+  </div>
+  <div class="div-margin">
+    <button [disabled]="form.invalid">{{ "DONE" | translate }}</button>
+  </div>
+</form>

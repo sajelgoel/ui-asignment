@@ -1,0 +1,15 @@
+<div class="flex-container">
+  <button
+    *ngFor="let tab of tabs"
+    [ngClass]="{ 'selected-tab': tab.selected }"
+    (click)="tabselected(tab)"
+  >
+    <span class="material-icons">
+      {{ tab.icon }}
+    </span>
+    <span class="tab-label">{{ tab.label }}</span>
+  </button>
+</div>
+<div class="content-conatiner">
+  <ng-container *ngComponentOutlet="component"></ng-container>
+</div>

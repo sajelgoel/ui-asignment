@@ -1,0 +1,16 @@
+<ng-container *ngIf="airlineDetails$ | async as airlineDetails">
+  <app-search-result
+    *ngIf="currentPage === 'result'"
+    (sortPage)="gotoSortingPage()"
+    (filterPage)="gotoFilterPage()"
+    [airlineDetails]="airlineDetails"
+  ></app-search-result>
+</ng-container>
+<app-sort
+  (changePage)="showSearchPage()"
+  *ngIf="currentPage === 'sort'"
+></app-sort>
+<app-filter
+  *ngIf="currentPage === 'filter'"
+  (changePage)="showSearchPage()"
+></app-filter>

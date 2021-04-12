@@ -1,0 +1,149 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="row content-center">
+    <div class="input-container">
+      <label for="departure">{{ "FLIGHT.DEPARTURE" | translate }}</label>
+      <input
+        type="text"
+        placeholder="{{ 'FLIGHT.AIRPORT' | translate }}"
+        formControlName="departure"
+        id="departure"
+        autocomplete="off"
+      />
+      <div
+        class="error-message"
+        *ngIf="
+          departure &&
+          departure.invalid &&
+          (departure.dirty || departure.touched)
+        "
+      >
+        <ng-container *ngIf="departure?.errors?.required">
+          {{ "REQUIRED_FIELD" | translate }}
+        </ng-container>
+        <ng-container *ngIf="departure?.errors?.minlength"
+          >Atleast 3 Character Long</ng-container
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row content-center">
+    <div class="input-container">
+      <label for="destination">{{ "FLIGHT.DESTINATION" | translate }}</label>
+      <input
+        type="text"
+        placeholder="{{ 'FLIGHT.AIRPORT' | translate }}"
+        formControlName="destination"
+        id="destination"
+        autocomplete="off"
+      />
+      <div
+        class="error-message"
+        *ngIf="
+          destination &&
+          destination.invalid &&
+          (destination.dirty || destination.touched)
+        "
+      >
+        <ng-container *ngIf="destination?.errors?.required">
+          {{ "REQUIRED_FIELD" | translate }}
+        </ng-container>
+        <ng-container *ngIf="destination?.errors?.minlength"
+          >Atleast 3 Character Long</ng-container
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="row content-center">
+    <div class="input-container">
+      <label for="departDate">{{ "FLIGHT.DEPART_DATE" | translate }}</label>
+      <input
+        id="departDate"
+        type="date"
+        placeholder="Depart Date"
+        formControlName="departDate"
+      />
+      <div
+        class="error-message"
+        *ngIf="
+          departDate &&
+          departDate.invalid &&
+          (departDate.dirty || departDate.touched)
+        "
+      >
+        <ng-container *ngIf="departDate?.errors?.required">
+          {{ "REQUIRED_FIELD" | translate }}
+        </ng-container>
+        <ng-container *ngIf="departDate?.errors?.invalidDate">{{
+          "FLIGHT.SELECT_VALID_DATE" | translate
+        }}</ng-container>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="returnDate">{{ "FLIGHT.RETURN_DATE" | translate }}</label>
+      <input
+        id="returnDate"
+        type="date"
+        placeholder="Return Date"
+        formControlName="returnDate"
+      />
+      <div
+        class="error-message"
+        *ngIf="
+          returnDate &&
+          returnDate.invalid &&
+          (returnDate.dirty || returnDate.touched)
+        "
+      >
+        <ng-container *ngIf="returnDate?.errors?.required">
+          {{ "REQUIRED_FIELD" | translate }}
+        </ng-container>
+        <ng-container *ngIf="returnDate?.errors?.invalidDate">{{
+          "FLIGHT.SELECT_VALID_DATE" | translate
+        }}</ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="row content-center">
+    <div class="input-container">
+      <label for="traveler">{{ "FLIGHT.TRAVELERS" | translate }}</label>
+      <select id="traveler" formControlName="traveler">
+        <option *ngFor="let traveler of travelers" [value]="traveler">
+          {{ traveler }}
+        </option>
+      </select>
+      <div
+        class="error-message"
+        *ngIf="
+          traveler && traveler.invalid && (traveler.dirty || traveler.touched)
+        "
+      >
+        <ng-container *ngIf="traveler?.errors?.required">
+          {{ "REQUIRED_FIELD" | translate }}
+        </ng-container>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="class">{{ "FLIGHT.CLASS" | translate }}</label>
+      <select id="class" formControlName="class">
+        <option *ngFor="let class of classes" [value]="class">
+          {{ class | translate }}
+        </option>
+      </select>
+      <div
+        class="error-message"
+        *ngIf="class && class.invalid && (class.dirty || class.touched)"
+      >
+        <ng-container *ngIf="class?.errors?.required">
+          {{ "REQUIRED_FIELD" | translate }}
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="row content-center">
+    <button [disabled]="myForm.invalid" [class.disabled]="myForm.invalid">
+      {{ "FLIGHT.SEARCH_FLIGHTS" | translate }}
+    </button>
+  </div>
+</form>

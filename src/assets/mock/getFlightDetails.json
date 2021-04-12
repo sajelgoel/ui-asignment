@@ -1,0 +1,146 @@
+{
+  "payload": {
+    "from": "DEL",
+    "to": "CPT",
+    "fromDate": "2021-04-01",
+    "toDate": "2021-04-04",
+    "traveler": "1 Adult",
+    "flightResult": [
+      {
+        "logo": "https://airhex.com/images/airline-logos/ethiopian-airlines.png",
+        "name": "Ethopian Airlines",
+        "fromTime": "Mon Apr 05 2021 04:55:12 GMT+0530 (India Standard Time)",
+        "fromPlace": "DEL",
+        "toPlace": "CPT",
+        "toTime": "Mon Apr 05 2021 13:55:12 GMT+0530 (India Standard Time)",
+        "totalTime": "9h 20m",
+        "stop": 1,
+        "classes": [
+          {
+            "category": "Basic economy",
+            "price": 165,
+            "seatLeft": 5
+          },
+          {
+            "category": "Main Cabin",
+            "price": 195,
+            "seatLeft": 3
+          },
+          {
+            "category": "Economy",
+            "price": 155,
+            "seatLeft": 2
+          }
+        ]
+      },
+      {
+        "logo": "https://i.pinimg.com/originals/44/06/50/440650aecb2741854614f5efa187f08e.jpg",
+        "name": "British Airways",
+        "fromTime": "Mon Apr 05 2021 01:55:12 GMT+0530 (India Standard Time)",
+        "fromPlace": "DEL",
+        "toPlace": "CPT",
+        "toTime": "Mon Apr 05 2021 13:55:12 GMT+0530 (India Standard Time)",
+        "totalTime": "12h 20m",
+        "stop": 1,
+        "classes": [
+          {
+            "category": "Basic economy",
+            "price": 125,
+            "seatLeft": 0
+          },
+          {
+            "category": "Main Cabin",
+            "price": 205,
+            "seatLeft": 3
+          },
+          {
+            "category": "Economy",
+            "price": 165,
+            "seatLeft": 0
+          }
+        ]
+      },
+      {
+        "logo": "https://airhex.com/images/airline-logos/ethiopian-airlines.png",
+        "name": "Ethopian Airlines",
+        "fromTime": "Mon Apr 05 2021 00:55:12 GMT+0530 (India Standard Time)",
+        "fromPlace": "DEL",
+        "toPlace": "CPT",
+        "toTime": "Mon Apr 05 2021 21:55:12 GMT+0530 (India Standard Time)",
+        "totalTime": "21h 20m",
+        "stop": 2,
+        "classes": [
+          {
+            "category": "Basic economy",
+            "price": 140,
+            "seatLeft": 8
+          },
+          {
+            "category": "Main Cabin",
+            "price": 320,
+            "seatLeft": 21
+          },
+          {
+            "category": "Economy",
+            "price": 16,
+            "seatLeft": 1
+          }
+        ]
+      },
+      {
+        "logo": "https://seekvectorlogo.com/wp-content/uploads/2018/05/indigo-vector-logo.png",
+        "name": "IndiGo",
+        "fromTime": "Mon Apr 05 2021 12:55:12 GMT+0530 (India Standard Time)",
+        "fromPlace": "DEL",
+        "toPlace": "CPT",
+        "toTime": "Mon Apr 06 2021 10:55:12 GMT+0530 (India Standard Time)",
+        "totalTime": "22h 20m",
+        "stop": 3,
+        "classes": [
+          {
+            "category": "Basic economy",
+            "price": 100,
+            "seatLeft": 0
+          },
+          {
+            "category": "Main Cabin",
+            "price": 125,
+            "seatLeft": 0
+          },
+          {
+            "category": "Economy",
+            "price": 110,
+            "seatLeft": 1
+          }
+        ]
+      },
+      {
+        "logo": "https://1000logos.net/wp-content/uploads/2020/09/Air-India-logo.jpg",
+        "name": "AirIndia",
+        "fromTime": "Mon Apr 05 2021 16:55:12 GMT+0530 (India Standard Time)",
+        "fromPlace": "DEL",
+        "toPlace": "CPT",
+        "toTime": "Mon Apr 05 2021 18:10:12 GMT+0530 (India Standard Time)",
+        "totalTime": "1h 10m",
+        "stop": 0,
+        "classes": [
+          {
+            "category": "Basic economy",
+            "price": 150,
+            "seatLeft": 5
+          },
+          {
+            "category": "Main Cabin",
+            "price": 215,
+            "seatLeft": 5
+          },
+          {
+            "category": "Economy",
+            "price": 190,
+            "seatLeft": 2
+          }
+        ]
+      }
+    ]
+  }
+}

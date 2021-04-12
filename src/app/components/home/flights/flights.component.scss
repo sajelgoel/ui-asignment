@@ -1,0 +1,71 @@
+label {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-color);
+  padding: 2px;
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  font-size: 12px;
+}
+
+.input-container {
+  position: relative;
+  margin: 15px 5px;
+}
+
+input[type="text"] {
+  height: 40px;
+  width: 100%;
+}
+
+select,
+input[type="date"] {
+  height: 40px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  .input-container {
+    width: 100%;
+  }
+}
+
+.content-center {
+  justify-content: center;
+}
+
+button {
+  width: 40%;
+  color: var(--primary-color);
+  background-color: var(--primary-bg-color);
+  height: 45px;
+  font-size: 1rem;
+}
+
+.error-message {
+  margin: 5px 0;
+  color: var(--error);
+  font-size: 1rem;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 600px) {
+  button {
+    width: 90%;
+  }
+
+  input[type="text"] {
+    height: 40px;
+    width: 100%;
+  }
+
+  select,
+  input[type="date"] {
+    height: 40px;
+    width: 100%;
+  }
+}

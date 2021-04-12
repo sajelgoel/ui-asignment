@@ -1,0 +1,11 @@
+<select #selectedLanguage (change)="languageChange(selectedLanguage.value)">
+  <option *ngFor="let lang of languages" [value]="lang">
+    {{ lang }}
+  </option>
+</select>
+
+<select #themeRef (change)="themeChange(themeRef.value)">
+  <option *ngFor="let theme of themes" [value]="theme">
+    {{ theme }}
+  </option>
+</select>

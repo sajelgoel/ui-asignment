@@ -1,0 +1,63 @@
+<article class="flight-detail-container">
+  <div class="row">
+    <img [src]="airline.logo" [alt]="airline.name" />
+    <span class="airline-title">{{ airline.name }}</span>
+  </div>
+
+  <div class="row row-content">
+    <div>
+      <div>
+        {{ airline.fromTime | date: "hh:mm a" }}
+      </div>
+      <div>
+        {{ airline.fromPlace }}
+      </div>
+    </div>
+
+    <div class="line">
+      <div class="travel-time">
+        {{ airline.totalTime }}
+      </div>
+      <div class="dots first-dot"></div>
+      <div class="dots second-dot"></div>
+      <div class="dots third-dot"></div>
+      <div class="stop">{{ airline.stop }} Stop (ADD)</div>
+    </div>
+
+    <div class="text-align-right">
+      <div>
+        {{ airline.toTime | date: "hh:mm a" }}
+      </div>
+      <div>
+        {{ airline.toPlace }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-bottom-0">
+    <button
+      *ngFor="let class of airline.classes"
+      class="class-box button"
+      role="button"
+    >
+      <div class="class-box-content">
+        <div class="seat-left" *ngIf="class.seatLeft">
+          {{ "SEATS_LEFT" | translate: { val: class.seatLeft } }}
+        </div>
+        <div class="prices">
+          {{ class.price | currency: "USD":"symbol":"2.0" }}
+        </div>
+
+        <div *ngIf="class.category === 'Basic economy'">
+          {{ "BASIC_ECONOMY" | translate }}
+        </div>
+        <div *ngIf="class.category === 'Main Cabin'">
+          {{ "MAIN_ECONOMY" | translate }}
+        </div>
+        <div *ngIf="class.category === 'Economy'">
+          {{ "ECONOMY" | translate }}
+        </div>
+      </div>
+    </button>
+  </div>
+</article>

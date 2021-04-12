@@ -1,0 +1,128 @@
+<div class="row header">
+  <span
+    class="material-icons cursor-pointer"
+    role="button"
+    (click)="changePage.emit()"
+  >
+    arrow_back </span
+  ><span>{{ "FILTER_BY" | translate }}</span>
+  <span></span>
+</div>
+<form [formGroup]="form" class="">
+  <div class="filter-box">
+    <div class="filter-box-title">{{ "PRICE_RANGE" | translate }}</div>
+    <div class="firt-row">
+      <div class="input-container">
+        <label for="minimumPrice" class="input-label">{{
+          "MINIMUM_PRICE" | translate
+        }}</label>
+        <span class="currency">$</span>
+        <input
+          type="number"
+          placeholder="{{ 'MINIMUM_PRICE' | translate }}"
+          id="minimumPrice"
+          formControlName="minimumPrice"
+          readonly
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            minimumPrice &&
+            minimumPrice.invalid &&
+            (minimumPrice.dirty || minimumPrice.touched)
+          "
+        >
+          <ng-container *ngIf="minimumPrice?.errors?.invalidRange"
+            >Minimum Price should be less then Maximum Price</ng-container
+          >
+        </div>
+      </div>
+      <div class="input-container">
+        <label for="maximumPrice" class="input-label">{{
+          "MAXIMUM_PRICE" | translate
+        }}</label>
+        <span class="currency">$</span>
+        <input
+          type="number"
+          placeholder="{{ 'MAXIMUM_PRICE' | translate }}"
+          id="maximumPrice"
+          formControlName="maximumPrice"
+          readonly
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            maximumPrice &&
+            maximumPrice.invalid &&
+            (maximumPrice.dirty || maximumPrice.touched)
+          "
+        >
+          <ng-container *ngIf="maximumPrice?.errors?.invalidRange"
+            >Maximum Price should be greater then Minimum Price</ng-container
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="middle">
+      <div class="multi-range-slider">
+        <input
+          type="range"
+          name=""
+          id="input-left"
+          min="0"
+          max="100"
+          value="0"
+          #inputLeft
+          (input)="setLeftValue()"
+        />
+        <input
+          type="range"
+          name=""
+          id="input-right"
+          min="0"
+          max="100"
+          value="100"
+          #inputRight
+          (input)="setRightValue()"
+        />
+
+        <div class="slider">
+          <div class="track"></div>
+          <div class="range" #range></div>
+          <div class="thumb left" #thumbLeft></div>
+          <div class="thumb right" #thumbRight></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filter-box">
+    <div class="filter-box-title">{{ "BOOKING_CLASS" | translate }}</div>
+    <div>
+      <div class="input-container">
+        <input type="checkbox" id="economy" formControlName="economy" />
+        <label for="economy" class="checkbox-padding">{{
+          "ECONOMY" | translate
+        }}</label>
+      </div>
+      <div class="input-container">
+        <input type="checkbox" id="firstClass" formControlName="firstClass" />
+        <label for="firstClass" class="checkbox-padding">{{
+          "FIRST_CLASS" | translate
+        }}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="div-margin">
+    <button (click)="resetAll()" type="button">
+      {{ "RESET_ALL" | translate }}
+    </button>
+
+    <button (click)="apply()" [disabled]="form.invalid" type="button">
+      {{ "APPLY" | translate }}
+    </button>
+  </div>
+</form>
+
+<script></script>

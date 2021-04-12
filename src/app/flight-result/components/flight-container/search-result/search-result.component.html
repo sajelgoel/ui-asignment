@@ -1,0 +1,54 @@
+<ng-container *ngIf="airlineDetails">
+  <div class="row">
+    <span class="material-icons cursor-pointer" routerLink="" role="button">
+      arrow_back
+    </span>
+    <div>
+      <div class="city-content">
+        <span>{{ airlineDetails.payload.from }}</span>
+        <span class="material-icons arrow-forward"> arrow_forward </span>
+        <span>{{ airlineDetails.payload.to }}</span>
+      </div>
+      <div class="other-details">
+        <span
+          >{{ airlineDetails.payload.fromDate | date: "MMM dd" }} -
+          {{ airlineDetails.payload.toDate | date: "MMM dd" }} |
+          {{ airlineDetails.payload.traveler }}</span
+        >
+      </div>
+    </div>
+
+    <span class="material-icons cursor-pointer"> create </span>
+  </div>
+  <div class="container">
+    <app-flight-details
+      [airline]="airlineDetail"
+      *ngFor="
+        let airlineDetail of airlineDetails.payload.flightResult
+          | sort: sortByVal
+          | filter: filterBy
+      "
+    ></app-flight-details>
+    <div
+      *ngIf="
+        (
+          airlineDetails.payload.flightResult
+          | sort: sortByVal
+          | filter: filterBy
+        )?.length === 0
+      "
+      class="no-flight"
+    >
+      {{ "NO_FLIGHT" | translate }}
+    </div>
+  </div>
+</ng-container>
+
+<div class="sort-filter-position">
+  <button (click)="sortBy()">
+    {{ "SORT_BY" | translate }}
+  </button>
+  <button (click)="filters()">
+    {{ "FILTERS" | translate }}
+  </button>
+</div>
